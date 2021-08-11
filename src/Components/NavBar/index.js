@@ -1,5 +1,5 @@
 import React from 'react';
-import PartyMakerLogo from '../PartyMakerLogo';
+import PartyfyLogo from '../PartyfyLogo';
 
 
 
@@ -7,7 +7,7 @@ import PartyMakerLogo from '../PartyMakerLogo';
 function NavBar() {
     return(
         <div className="NavBar" >
-            <PartyMakerLogo />
+            <PartyfyLogo />
             <ul>
                 <il><a href="url">Best Rankings</a></il>
                 <il><a href="url">Music Universe</a></il>
