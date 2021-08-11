@@ -1,17 +1,19 @@
 import React from 'react';
-import styled from 'styled-components'
+import PartyMakerLogo from '../PartyMakerLogo';
 
-const PartyMakerLogo = styled.h1``;
 
 
 
 function NavBar() {
     return(
-        <div>
-            <h1>
-                PARTYMAKER
-            </h1>
-            <button>Alo</button>
+        <div className="NavBar" >
+            <PartyMakerLogo />
+            <ul>
+                <il><a href="url">Best Rankings</a></il>
+                <il><a href="url">Music Universe</a></il>
+                <il><a href="url">Party Time!</a></il>
+                <il><a href="url">About</a></il>
+            </ul>
         </div>
     )
 }
