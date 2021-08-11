@@ -6,13 +6,12 @@ const PartyMakerLogo = styled.h1``;
 
 
 function NavBar() {
-    return(
+    return (
         <div>
-            <h1>
-                PARTYMAKER
-            </h1>
-            <button>Alo</button>
+            <h1>PARTIFY</h1>
         </div>
+
+        
     )
 }
 
