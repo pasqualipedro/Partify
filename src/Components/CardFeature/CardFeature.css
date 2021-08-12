@@ -13,7 +13,7 @@ body{
     background: rgb(255, 255, 255);
 }
 
-.container{
+/* .container{
     position: relative;
     display: flex;
     justify-content: center;
@@ -84,4 +84,5 @@ body{
     border-radius: 20px;
     font-weight: 500;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+} */
 
