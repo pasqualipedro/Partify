@@ -3,8 +3,10 @@ import styled from 'styled-components';
 
 
 const Logo = styled.h1`
+    width: 100%;
     background: blue;
     font-family: 'Monoton';
+    font-weight: normal;
 `;
 
 /*
