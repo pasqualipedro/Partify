@@ -38,4 +38,6 @@ class CardFeature extends Component {
         )
     }
 }
+
 export default CardFeature;
+
