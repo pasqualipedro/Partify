@@ -2,8 +2,6 @@ import React from 'react';
 import PartyfyLogo from '../PartyfyLogo';
 
 
-
-
 function NavBar() {
     return(
         <div className="NavBar" >
