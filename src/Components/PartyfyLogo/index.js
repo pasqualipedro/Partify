@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 const Logo = styled.h1`
     width: 100%;
-    background: blue;
+    background: grey;
     font-family: 'Monoton';
-    font-weight: normal;
+    font-weight: light;
+    font-height:0.32em; 
 `;
 
 /*

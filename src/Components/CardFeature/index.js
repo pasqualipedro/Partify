@@ -9,6 +9,12 @@ const Wrapper = styled.div`
     max-width: 1200px;
     flex-wrap: wrap;
     z-index: 1;
+
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
 `;
 
 const Card = styled.div`
@@ -74,7 +80,6 @@ const Content = styled.div`
     }
 
 `;
-
 
 
 class CardFeature extends Component {
