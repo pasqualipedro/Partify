@@ -8,7 +8,7 @@ import CardFeature from '../Components/CardFeature';
 font-family: 'Roboto', sans-serif; */
 
 
-const AppStyle = styled.div`
+const CardFeaturesList = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,10 +20,12 @@ const AppStyle = styled.div`
 
 function App() {
   return (
-    <AppStyle >
-      <NavBar/>
-      <CardFeature/>
-    </AppStyle>
+    <React.Fragment>
+      <NavBar />
+      {/* <CardFeaturesList>
+        <CardFeature />
+      </CardFeaturesList> */}
+    </React.Fragment>
   );
 }
 

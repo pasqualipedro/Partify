@@ -1,22 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    flex-wrap: wrap;
-    z-index: 1;
-
-    margin:0 ;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    
-`;
-
 const Card = styled.div`
     position: relative;
     width: 280px;
@@ -78,16 +62,14 @@ const Content = styled.div`
     font-weight: 500;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
-
 `;
-
 
 class CardFeature extends Component {
     state = {}
 
     render() {
         return (
-            <Wrapper>
+            <>
                 <Card>
                     <Content>
                         <h2>01</h2>
@@ -112,7 +94,7 @@ class CardFeature extends Component {
                         <a href="#">More</a>
                     </Content>
                 </Card>
-            </Wrapper>
+            </>
         )
     }
 }
