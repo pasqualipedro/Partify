@@ -1,6 +1,7 @@
 import React from 'react';
-import PartyfyLogo from '../PartyfyLogo';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import PartyfyLogo from '../PartyfyLogo';
 
 const Wrapper = styled.div`
     display: flex;
@@ -16,7 +17,7 @@ const Wrapper = styled.div`
         letter-spacing: 3px;
     }
 
-    il {
+    li {
         margin: 10px;
     }
 
@@ -27,16 +28,14 @@ const Wrapper = styled.div`
     }
 `;
 
-
 function NavBar() {
     return(
         <Wrapper>
             <PartyfyLogo />
             <ul>
-                <il><a href="url">Best Rankings</a></il>
-                <il><a href="url">Music Universe</a></il>
-                <il><a href="url">Party Time!</a></il>
-                <il><a href="url">About</a></il>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/best-rankings">Best Rankings</Link></li>
+                <li><Link to="/music-universe">Music Universe</Link></li>
             </ul>
         </Wrapper>
     )
