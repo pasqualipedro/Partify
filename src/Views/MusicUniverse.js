@@ -4,7 +4,7 @@ import react from 'react-dom'
 function MusicUniverse() {
     return (
         <>
-            <h1>This is Music Universe</h1>
+            <h1>This is MusicUniverse</h1>
         </>
     )
 }
