@@ -3,6 +3,7 @@ import PartyfyLogo from '../Components/PartyfyLogo'
 import styled from 'styled-components';
 import CardFeature from '../Components/CardFeature';
 import WebPlayer from '../Components/WebPlayer/index';
+import Footer from '../Components/Footer';
 
 
 // ----- CONFIRMAR COMO MUDAR COR SOMENTE DE UMA INSTANCIA DE UM COMPONENTE ----//
@@ -15,7 +16,7 @@ const PartOne = styled.section`
     background-image: url("../Img/person.png");
     background-size: cover;
     height: 100vh;
-    width: 100vw;
+    width: 95vw;
 `;
 
 const PartTwo = styled.section`
@@ -32,7 +33,8 @@ function HomePage() {
             </PartOne>
             <PartTwo>
                 <WebPlayer />
-            </PartTwo>            
+            </PartTwo>
+            <Footer />            
         </>
     )
 }
