@@ -12,7 +12,7 @@ class WebPlayer extends Component {
 
     render() {
         return (
-            <body>
+            <>
                 <div id="player">
                     <h4><i class="material-icons">equalizer</i> PartyTime</h4>
                     <div class="card">
@@ -25,7 +25,7 @@ class WebPlayer extends Component {
                     </div>
                 </div>
                 <script src="index.js"></script>
-            </body>
+            </>
         )
     }
 };
