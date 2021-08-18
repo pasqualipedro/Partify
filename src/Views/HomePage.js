@@ -33,7 +33,6 @@ function HomePage() {
                 <CardFeature />
             </PartOne>
             <PartTwo>
-                {/* <EmoCard /> */}
                 <WebPlayer />
             </PartTwo>
             <Footer />            

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import './EmoCard.css';
+/* import './EmoCard.css'; */
 /* import styled from 'styled-components'; */
 
 
@@ -28,7 +28,7 @@ class EmoCard extends Component {
                     </div>
                 </div>
 
-                <script>
+                {/* <script>
                     $(".carousel").owlcarousel({
                     margin: 10,
                     loop: true,
@@ -55,7 +55,7 @@ class EmoCard extends Component {
 
                 </script>
 
-                <script src="index.js"></script>
+                <script src="index.js"></script> */}
 
             </>
         )

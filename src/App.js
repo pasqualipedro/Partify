@@ -3,7 +3,18 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import HomePage from "./Views/HomePage";
 import BestRankings from './Views/BestRankings';
-import MusicUniverse from './Views/BestRankings';
+import MusicUniverse from './Views/MusicUniverse';
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Roboto;
+  }
+
+
+`;
 
 
 /* font-family: 'Monoton', cursive;
@@ -21,6 +32,7 @@ font-family: 'Roboto', sans-serif; */
 function App() {
   return (
     <>
+      <GlobalStyle />
       <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage}/>
