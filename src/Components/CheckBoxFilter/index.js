@@ -31,6 +31,7 @@ class CheckBoxFilter extends Component {
                     <label><input type="checkbox" name="filter-artist" value="artist" id="artist" />Artist</label>
                     <label><input type="checkbox" name="filter-album" value="album" id="album" />Album</label>
                     <label><input type="checkbox" name="filter-song" value="song" id="song" />song</label>
+                    <label></label><input type="submit"></input>
                     <label></label><input type="reset"></input>
                 </form>
             </Wrapper>
