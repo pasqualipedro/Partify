@@ -1,6 +1,6 @@
 import react from 'react-dom'
 import styled from 'styled-components';
-import CheckBoxFilter from '../Components/CheckBoxFilter';
+import CheckBoxFilterRankings from '../Components/CheckBoxFilterRankings';
 import InfoTextBox from '../Components/InfoTextBox';
 
 const Wrapper = styled.div`
@@ -20,7 +20,7 @@ function BestRankings() {
     return (
         <Wrapper>
             <h1>This is Best Rankings</h1>
-            <CheckBoxFilter />
+            <CheckBoxFilterRankings />
             <div>
                 <InfoTextBox />
                 <InfoTextBox />
