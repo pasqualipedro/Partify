@@ -6,6 +6,36 @@ import BestRankings from './Views/BestRankings';
 import MusicUniverse from './Views/MusicUniverse';
 import styled, { createGlobalStyle } from "styled-components";
 
+
+const axios = require('axios');
+
+const postAuthentication = () => {
+  axios({
+    url: 'https://accounts.spotify.com/api/token',
+    method: 'post',
+    params: {
+      grant_type: 'client_credentials'
+    },
+    headers: {
+      'Accept':'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    auth: {
+      username: 'YOUR-CLIENT-ID',
+      password: 'YOUR-CLIENT-SECRET'
+    }
+  })
+  .then(function(response) {
+      console.log(response);
+  })
+  .catch(function(error) {
+  });
+};
+document.getElementById('get-country-btn').addEventListener('click', () => {
+  const userInput = document.getElementById('country-name-input').value;
+  getCountryInfo(userInput);
+});
+
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;

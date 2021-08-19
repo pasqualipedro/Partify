@@ -13,7 +13,7 @@ const Wrapper = styled.div`
     }
 `;
 
-class CheckBoxFilter extends Component {
+class CheckBoxFilterRankings extends Component {
 
     state = {
         decade: ``,
@@ -39,4 +39,4 @@ class CheckBoxFilter extends Component {
     }
 };
 
-export default CheckBoxFilter;
+export default CheckBoxFilterRankings;
