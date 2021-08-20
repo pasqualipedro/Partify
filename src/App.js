@@ -5,9 +5,9 @@ import HomePage from "./Views/HomePage";
 import BestRankings from './Views/BestRankings';
 import MusicUniverse from './Views/MusicUniverse';
 import styled, { createGlobalStyle } from "styled-components";
+import api from './ApiRequests';
 
-
-const axios = require('axios');
+/* const axios = require('axios');
 
 const postAuthentication = () => {
   axios({
@@ -34,7 +34,14 @@ const postAuthentication = () => {
 document.getElementById('get-country-btn').addEventListener('click', () => {
   const userInput = document.getElementById('country-name-input').value;
   getCountryInfo(userInput);
-});
+}); */
+
+const teste = async () => {
+  const token = await api.getTeste()
+  console.log(token);
+}
+
+
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -60,6 +67,8 @@ font-family: 'Roboto', sans-serif; */
 `; */
 
 function App() {
+  teste()
+
   return (
     <>
       <GlobalStyle />
