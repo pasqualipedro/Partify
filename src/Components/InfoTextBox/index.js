@@ -23,14 +23,13 @@ const Wrapper = styled.div`
     }
 `;
 
-
 class InfoTextBox extends Component {
 
     render() {
         return (
             <Wrapper>
                 <div>
-                    <h1>Content Title</h1>
+                    <h1>{this.props.name}</h1>
                 </div>
                 <div>
                     <ol>

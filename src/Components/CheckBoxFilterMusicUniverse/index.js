@@ -1,7 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
-import SearchBar from '../SearchBar';
 
 
 const Wrapper = styled.div`
@@ -17,23 +16,49 @@ const Wrapper = styled.div`
 class CheckBoxFilterMusicUniverse extends Component {
 
     state = {
-        decade: ``,
-        artist: ``,
-        album: ``,
-        song: ``
+        search : ``,
+        filteredArtist : false ,
+        filteredAlbum : false ,
+        filteredSong : false ,
+    };
+
+
+    handleCheckBoxes = (event) => {
+        this.setState({
+
+        })
+    };
+    
+    handleInput = (event) => {
+        this.setState({
+            search : event.target.value
+        })
+    };
+
+    handleSubmitButton = (event) => {
+        event.preventDefault();
+        console.log(this.state.search, this.state.filteredArtist, this.state.filteredAlbum, this.state.filteredSong);
+        this.props.getMusics(this.state.search)
     };
 
 
     render() {
         return (
             <Wrapper>
-                <SearchBar />
-                <form>
-                    <label><input type="checkbox" name="filter-artist" value="artist" id="artist" />Artist</label>
-                    <label><input type="checkbox" name="filter-album" value="album" id="album" />Album</label>
-                    <label><input type="checkbox" name="filter-song" value="song" id="song" />song</label>
-                    <label></label><input type="submit"></input>
-                    <label></label><input type="reset"></input>
+                <form onSubmit= {this.handleSubmitButton} >
+                    <label><input type="checkbox" name="filterArtist" value="artist" id="artist" />Artist</label>
+                    <label><input type="checkbox" name="filterAlbum" value="album" id="album" />Album</label>
+                    <label><input type="checkbox" name="filterSong" value="song" id="song" />song</label>
+                    <label>Search for songs, artists or albuns</label>
+                    <input
+                        type="text"
+                        id="header-search"
+                        placeholder="Search anything"
+                        name="search"
+                        value= {this.state.search}
+                        onChange = {(event) => this.handleInput(event)}
+                    />
+                    <button type="submit">Search</button>
                 </form>
             </Wrapper>
         )

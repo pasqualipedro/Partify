@@ -4,7 +4,7 @@ import NavBar from "./Components/NavBar";
 import HomePage from "./Views/HomePage";
 import BestRankings from './Views/BestRankings';
 import MusicUniverse from './Views/MusicUniverse';
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import api from './ApiRequests';
 
 /* const axios = require('axios');
@@ -36,10 +36,14 @@ document.getElementById('get-country-btn').addEventListener('click', () => {
   getCountryInfo(userInput);
 }); */
 
-const teste = async () => {
+const teste1 = async () => {
+  await api.fetchArtistAlbums()
+};
+
+const teste2 = async () => {
   const token = await api.getTeste()
   console.log(token);
-}
+};
 
 
 
@@ -67,7 +71,6 @@ font-family: 'Roboto', sans-serif; */
 `; */
 
 function App() {
-  teste()
 
   return (
     <>

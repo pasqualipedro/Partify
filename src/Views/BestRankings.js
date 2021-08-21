@@ -1,4 +1,3 @@
-import react from 'react-dom'
 import styled from 'styled-components';
 import CheckBoxFilterRankings from '../Components/CheckBoxFilterRankings';
 import InfoTextBox from '../Components/InfoTextBox';

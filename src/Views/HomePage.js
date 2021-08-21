@@ -1,17 +1,9 @@
-import react from 'react-dom'
 import PartyfyLogo from '../Components/PartyfyLogo'
 import styled from 'styled-components';
 import CardFeature from '../Components/CardFeature';
 import WebPlayer from '../Components/WebPlayer/index';
 import Footer from '../Components/Footer';
-import EmoCard from '../Components/Emocards';
-
-
-// ----- CONFIRMAR COMO MUDAR COR SOMENTE DE UMA INSTANCIA DE UM COMPONENTE ----//
-/* const PartyfyLogo = styled.div`
-    color: black;
-`;
- */
+/* import EmoCard from '../Components/Emocards'; */
 
 const PartOne = styled.section`
     background-image: url("../Img/person.png");
