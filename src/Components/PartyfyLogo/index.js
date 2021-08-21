@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-const Logo = styled.h1`
+const Logo = styled.div`
     max-width: 250px;
     width: 15vw;
     font-size: 15px;
@@ -16,7 +16,7 @@ const Logo = styled.h1`
 function PartyfyLogo() {
     return(
         <Logo>
-        <h1>PARTYFY</h1>
+            <h1>PARTYFY</h1>
         </Logo>
     )
 }

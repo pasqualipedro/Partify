@@ -86,7 +86,7 @@ class CardFeature extends Component {
             <Container>
                 <Card>
                     <Content>
-                        <img src="../../Img/limit.png"/>
+                        <img src="../../Img/limit.png" alt="limit"/>
                         <h2>01</h2>
                         <h3>Best Rankings</h3>
                         <p>Find the most played song, singer or album right now!</p>
@@ -95,7 +95,7 @@ class CardFeature extends Component {
                 </Card>
                 <Card>
                     <Content>
-                        <img src="../../Img/noun_Speaker_4123960.svg"/>
+                        <img src="../../Img/noun_Speaker_4123960.svg" alt="speaker"/>
                         <h2>02</h2>
                         <h3>Music Universe</h3>
                         <p>Discover the best in the world of music!</p>

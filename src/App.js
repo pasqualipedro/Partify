@@ -4,7 +4,7 @@ import NavBar from "./Components/NavBar";
 import HomePage from "./Views/HomePage";
 import BestRankings from './Views/BestRankings';
 import MusicUniverse from './Views/MusicUniverse';
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import api from './ApiRequests';
 
 /* const axios = require('axios');
@@ -71,7 +71,6 @@ font-family: 'Roboto', sans-serif; */
 `; */
 
 function App() {
-
 
   return (
     <>

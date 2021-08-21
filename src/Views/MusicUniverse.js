@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import react from 'react-dom'
 import styled from 'styled-components';
 import CheckBoxFilterMusicUniverse from '../Components/CheckBoxFilterMusicUniverse';
 import InfoTextBox from '../Components/InfoTextBox';
@@ -25,8 +24,7 @@ class MusicUniverse extends Component {
     };
 
     getMusics = async (name) => {
-        
-        const result = await api.fetchArtistAlbums(name);
+        const result = await api.TenTopArtistTracks(name);
         console.log(result);
         this.setState({
             musics: result
@@ -37,9 +35,10 @@ class MusicUniverse extends Component {
         return (
             <Wrapper>
                 <h1>This is Music Universe</h1>
+                <h4>I want to search for:</h4>
                 <CheckBoxFilterMusicUniverse getMusics = {this.getMusics}/>
                 <div>
-                    {this.state.musics.map((element) => <InfoTextBox name = {element.name} /> )}
+                    {this.state.musics.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
                 </div>
             </Wrapper>
         )
