@@ -36,10 +36,14 @@ document.getElementById('get-country-btn').addEventListener('click', () => {
   getCountryInfo(userInput);
 }); */
 
-const teste = async () => {
+const teste1 = async () => {
+  await api.fetchArtistAlbums()
+};
+
+const teste2 = async () => {
   const token = await api.getTeste()
   console.log(token);
-}
+};
 
 
 
@@ -67,7 +71,7 @@ font-family: 'Roboto', sans-serif; */
 `; */
 
 function App() {
-  teste()
+
 
   return (
     <>
