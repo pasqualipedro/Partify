@@ -21,15 +21,28 @@ class MusicUniverse extends Component {
 
     state = {
         musics: [],
+        albums: [],
+        artists: []
     };
 
     getMusics = async (name) => {
-        const result = await api.TenTopArtistTracks(name);
+        const result = await api.ArtistTopTenTracks(name);
         console.log(result);
         this.setState({
             musics: result
         })
     };
+
+    getAlbums = async (name) => {
+        const result = await api.ArtistTopTenAlbums(name);
+        console.log(result);
+        this.setState({
+            albums: result
+        })
+    };
+
+    
+
 
     render() {
         return (
