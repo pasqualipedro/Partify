@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     margin: 10px;
     padding: 5px;
     border-radius: 15px;
-
+    }
 
 
     ol {
