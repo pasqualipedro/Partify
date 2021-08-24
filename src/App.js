@@ -36,15 +36,6 @@ document.getElementById('get-country-btn').addEventListener('click', () => {
   getCountryInfo(userInput);
 }); */
 
-const teste1 = async () => {
-  await api.fetchArtistAlbums()
-};
-
-const teste2 = async () => {
-  const token = await api.getTeste()
-  console.log(token);
-};
-
 
 
 const GlobalStyle = createGlobalStyle`
@@ -56,7 +47,6 @@ const GlobalStyle = createGlobalStyle`
 
 
 `;
-
 
 /* font-family: 'Monoton', cursive;
 font-family: 'Roboto', sans-serif; */

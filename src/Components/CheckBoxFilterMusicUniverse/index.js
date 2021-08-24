@@ -20,7 +20,7 @@ class CheckBoxFilterMusicUniverse extends Component {
     filteredSong: false,
   };
 
-  handleCheckBoxArtist = (event) => {
+/*   handleCheckBoxArtist = (event) => {
     this.setState({
       filteredArtist: event.target.checked,
     });
@@ -36,7 +36,8 @@ class CheckBoxFilterMusicUniverse extends Component {
     this.setState({
       filteredSong: event.target.checked,
     });
-  };
+  }; */
+
 
   handleInput = (event) => {
     this.setState({
@@ -53,6 +54,7 @@ class CheckBoxFilterMusicUniverse extends Component {
       this.state.filteredSong
     );
     this.props.getMusics(this.state.search);
+
   };
 
   render() {

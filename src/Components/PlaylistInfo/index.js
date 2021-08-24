@@ -2,11 +2,12 @@ import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
 
+
 const Wrapper = styled.div`
     
     div {
     background: grey;
-    width: 175px;
+    width: 500px;
     height: 100px;
     margin: 5px;
     padding: 10px;
@@ -27,29 +28,26 @@ const Wrapper = styled.div`
     }
 `;
 
-class MoodCard extends Component {
+class PlaylistInfo extends Component {
 
     state = {
         
-    };
-
-    handleSubmitButton = (event) => {
-        event.preventDefault();
-            this.props.parentCallBackPlaylistInfo(this.props.mood);
     };
 
     render() {
         return (
             <Wrapper>
                 <div href="#" className="card card-text border-warning">
-                    <form onSubmit={this.handleSubmitButton}>
-                        <button>Select</button>
-                    </form>
                     <p>{this.props.mood}</p>
+                    <ol>
+                        <li>{this.props.link}</li>
+                        <li>teste</li>
+                        <li>teste</li>
+                    </ol>
                 </div>
             </Wrapper>
         )
     }
 };
 
-export default MoodCard;
+export default PlaylistInfo;
