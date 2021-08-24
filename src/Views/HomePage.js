@@ -5,20 +5,20 @@ import WebPlayer from '../Components/WebPlayer/index';
 import Footer from '../Components/Footer';
 import api from '../ApiRequests'
 import { Component } from 'react';
-/* import EmoCard from '../Components/Emocards'; */
+import PlaylistInfo from '../Components/PlaylistInfo';
+
 
 const PartOne = styled.section`
-    background-image: url("../Img/person.png");
+    background-color: white;
+    ${'' /* background-image: url("../Img/person.png"); */}
     background-size: cover;
     height: 100vh;
     width: 95vw;
 `;
-
 const PartTwo = styled.section`
     background: lightgrey;
 `;
-
-const MoodCardListOne = styled.div`
+const MoodCardList = styled.div`
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -27,22 +27,21 @@ const MoodCardListOne = styled.div`
 class HomePage extends Component {
 
     state = {
-        playlist: [],
-        moods: [`pop`, `rock`, `blues`, `samba`, `reggae`, `classic`, `gospel`, `punk`, `metal`, `grunge`, `lo-fi`, `jazz`]
+        moods: [`sad`, `happy`, `furious`, `frustrated`, `euphoric`, `Wanna Dance!`, `In Love`, `I´m drunk...`, `energetic`, `anxious`, `lazy`, `heartbreak`, `courageous`, `unstoppable`, `trash`, `as a Queen`, `as a King`, `Rich`, `High`, `Cold`, `Hot`, `free hugs`, ],
+        playlistInfo: []
+
     };
 
-    getMoodPlaylists = async (mood) => {
-        const result = await api.PlaylistMoodCards(`rock`);
+
+    getMoodPlaylistInfo = async (mood) => {
+        const result = await api.randomPlaylistInfo(mood);
         console.log(result);
         this.setState({
-            playlist: result
+            playlistInfo: result
         })
     };
 
-    handleSubmitButton = (event) => {
-        event.preventDefault();
-            this.getMoodPlaylists();
-    };
+    
 
     render() {
         return (
@@ -50,17 +49,17 @@ class HomePage extends Component {
                 <PartOne>
                     <PartyfyLogo />
                     <h2>Tell us your mood. We´ll make it happen ;)</h2>
-                    <form onSubmit={this.handleSubmitButton}>
-                        <button>Submit</button>
-                    </form>
-                    <MoodCardListOne className="">
-                        {this.state.moods.map((element) => <MoodCard mood = {element} /> )}
-                        {/* <MoodCard description = {element.description} id = {element.id} external_url = {element.external_url} /> */}
-                    </MoodCardListOne>
+                    <MoodCardList className="">
+                        {this.state.moods.map((element, index) => <MoodCard mood = {element} parentCallBackPlaylistInfo = {this.getMoodPlaylistInfo} key = {index} /> )}
+                    </MoodCardList>
+                    <PlaylistInfo
+                        // link = {this.state}
+                        // followers = {this.state}
+                        // cover = {this.state}
+                        // tracksArray = {this.state}
+                        // totalTracks = {this.state}
+                    />
                 </PartOne>
-                <PartTwo>
-                    {/* <WebPlayer /> */}
-                </PartTwo>
                 <Footer />            
             </>
         )

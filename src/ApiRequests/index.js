@@ -7,15 +7,13 @@ class ApiRequests {
       clientSecret: "7890e522333d4947bc6d68c20e6d57a5",
       redirectUri: "http://www.example.com/callback",
     });
-    
-
+    this.spotifyApi.setAccessToken(
+      `BQCOPiBP-NyW04MBwH1OWaMOYFVxaVq5SLrXwhUU5SpMbYAtvXeC0SCshKPy4SDU4GOxJu22AoJaXEr1y_E`
+    );
   }
 
-  ArtistTopTenTracks = async (name) => {
+  artistTopTenTracks = async (name) => {
     try {
-      await this.spotifyApi.setAccessToken(
-        `BQDCVtkRAQI_30ynbrBruf82DQ_7oKwYNZua_2Sym6qtgC00E_8vcH6Hy4b5No8Br7SDpzv_HdtHK-m7zJo`
-      );
       const artist = await this.spotifyApi.searchArtists(name);
       const topTracks = await this.spotifyApi.getArtistTopTracks(
         artist.body.artists.items[0].id,
@@ -27,41 +25,36 @@ class ApiRequests {
     }
   };
 
-  ArtistTopTenAlbums = async (name) => {
+
+  artistTopTenAlbums = async (name) => {
     try {
-      await this.spotifyApi.setAccessToken(
-        `BQDCVtkRAQI_30ynbrBruf82DQ_7oKwYNZua_2Sym6qtgC00E_8vcH6Hy4b5No8Br7SDpzv_HdtHK-m7zJo`
-      );
       const artist = await this.spotifyApi.searchArtists(name);
       const topAlbums = await this.spotifyApi.getArtistAlbums(
         artist.body.artists.items[0].id,
         `GB`
       );
-      console.log(artist);
-      /* const topTracks = await this.spotifyApi.getArtistAlbums(
-        artist.body.artists.items[0].id,
-        `GB`
-      );
-      return topTracks.body.tracks; */
+      console.log(topAlbums);
+      return topAlbums
     } catch (error) {
       console.log(error);
     }
   };
 
-  PlaylistMoodCards = async (mood) => {
+
+  randomPlaylistInfo = async (mood) => {
     try {
-      await this.spotifyApi.setAccessToken(
-        `BQDCVtkRAQI_30ynbrBruf82DQ_7oKwYNZua_2Sym6qtgC00E_8vcH6Hy4b5No8Br7SDpzv_HdtHK-m7zJo`
+      const moodPlaylist = await this.spotifyApi.searchPlaylists(mood);
+      const playlists = moodPlaylist.body.playlists.items;
+      const randomPlaylist =
+        playlists[Math.floor(Math.random() * playlists.length)];
+      const playlistDetails = await this.spotifyApi.getPlaylist(
+        randomPlaylist.id
       );
-      const moodPlaylist = await this.spotifyApi.searchPlaylists(`rock`);
-      return moodPlaylist.body.playlists.items;
+      return playlistDetails.body;
     } catch (error) {
       console.log(error);
     }
-  }
-
-
-  
+  };
 }
 
 export default new ApiRequests();
