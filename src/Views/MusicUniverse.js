@@ -20,31 +20,32 @@ const Wrapper = styled.div`
 class MusicUniverse extends Component {
 
     state = {
-        musics: [],
+        tracks: [],
         albums: [],
         artists: []
     };
 
-    getAllInfo = async (name) => {
-        this.getMusics(name);
+    /* getAllInfo = (name) => {
+        this.getTracks(name);
+        this.getArtists(name);
         this.getAlbums(name);
-    }
+    } */
 
-    getMusics = async (name) => {
+    getTracks = async (name) => {
         const result = await api.TopTenTracks(name);
         console.log(result);
         this.setState({
-            musics: result
+            tracks: result
         })
     };
 
-/*     getArtists = async (name) => {
-        const result = await api.TopTenTracks(name);
+    getArtists = async (name) => {
+        const result = await api.TopTenArtists(name);
         console.log(result);
         this.setState({
-            musics: result
+            artists: result
         })
-    }; */
+    };
 
     getAlbums = async (name) => {
         const result = await api.TopTenAlbums(name);
@@ -60,16 +61,20 @@ class MusicUniverse extends Component {
             <Wrapper>
                 <h1>This is Music Universe</h1>
                 <h4>I want to search for:</h4>
-                <CheckBoxFilterMusicUniverse getAllInfo = {this.getAllInfo}  />
-{/*                 getMusics = {this.getMusics} getAlbums = {this.getAlbums}*/}                <div>
-                    {this.state.musics.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
-                </div>
+                <CheckBoxFilterMusicUniverse getTracks={this.getTracks} getArtists={this.getArtists} getAlbums={this.getAlbums} />
+{/*                 getSongs = {this.getTracks} getAlbums = {this.getAlbums}*/}
                 <div>
+                    {this.state.artists.map((element, index) => <InfoTextBox name={element.name} id={element.index} /> )}
+                    {console.log(this.state.artists)}
+                </div>
+                {/* <div>
                     {this.state.artists.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
-                </div>
-                <div>
+                    {console.log(this.state.artists)}
+                </div> */}
+                {/* <div>
                     {this.state.albums.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
-                </div>
+                    {console.log(this.state.albums)}
+                </div> */}
             </Wrapper>
         )
 

@@ -59,9 +59,14 @@ class PlaylistInfo extends Component {
                         <div className="overlayOne" onClick={this.props.togglePlaylist}></div>
                             <div className="modal-contentOne">
                                 <p>{this.props.mood}</p>
+                                {console.log( "teste teste teste", this.props.playlistInfo)}
                                 <ol>
-                                    <li>{this.props.link}</li>
-                                    <li>teste</li>
+                                    <li>
+                                        <a href={this.props.playlistInfo.external_urls} >
+                                            <img src="../../Img/play.png" alt="playbutton" />
+                                        </a>
+                                    </li>
+                                    <li>Seguidores: {/* {this.props.playlistInfo.followers} */}</li>
                                     <li>teste</li>
                                 </ol>
 
