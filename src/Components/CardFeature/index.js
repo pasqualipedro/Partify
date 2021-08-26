@@ -13,7 +13,7 @@ class CardFeature extends Component {
                         <h2>01</h2>
                         <h3>Best Rankings</h3>
                         <p>Find the most played song, singer or album right now!</p>
-                        <a href="#">More</a>
+                        {/* <a href="#">More</a> */}
                     </div>
                 </div>
 
