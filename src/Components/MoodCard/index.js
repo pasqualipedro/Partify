@@ -1,8 +1,11 @@
 import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
+import PlaylistInfo from '../PlaylistInfo';
 
 const Wrapper = styled.div`
+    
+
     
     div {
     background: grey;
@@ -33,18 +36,16 @@ class MoodCard extends Component {
         
     };
 
-    handleSubmitButton = (event) => {
-        event.preventDefault();
+    handleSubmitButton = () => {
             this.props.parentCallBackPlaylistInfo(this.props.mood);
+            this.props.togglePlaylist();
     };
+
 
     render() {
         return (
             <Wrapper>
-                <div href="#" className="card card-text border-warning">
-                    <form onSubmit={this.handleSubmitButton}>
-                        <button>Select</button>
-                    </form>
+                <div className="card card-text border-warning" onClick={this.handleSubmitButton}>
                     <p>{this.props.mood}</p>
                 </div>
             </Wrapper>
