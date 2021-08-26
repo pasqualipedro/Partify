@@ -25,16 +25,29 @@ class MusicUniverse extends Component {
         artists: []
     };
 
+    getAllInfo = async (name) => {
+        this.getMusics(name);
+        this.getAlbums(name);
+    }
+
     getMusics = async (name) => {
-        const result = await api.artistTopTenTracks(name);
+        const result = await api.TopTenTracks(name);
         console.log(result);
         this.setState({
             musics: result
         })
     };
 
+/*     getArtists = async (name) => {
+        const result = await api.TopTenTracks(name);
+        console.log(result);
+        this.setState({
+            musics: result
+        })
+    }; */
+
     getAlbums = async (name) => {
-        const result = await api.artistTopTenAlbums(name);
+        const result = await api.TopTenAlbums(name);
         console.log(result);
         this.setState({
             albums: result
@@ -47,9 +60,15 @@ class MusicUniverse extends Component {
             <Wrapper>
                 <h1>This is Music Universe</h1>
                 <h4>I want to search for:</h4>
-                <CheckBoxFilterMusicUniverse getMusics = {this.getMusics} getAlbums = {this.getAlbums} />
-                <div>
+                <CheckBoxFilterMusicUniverse getAllInfo = {this.getAllInfo}  />
+{/*                 getMusics = {this.getMusics} getAlbums = {this.getAlbums}*/}                <div>
                     {this.state.musics.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
+                </div>
+                <div>
+                    {this.state.artists.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
+                </div>
+                <div>
+                    {this.state.albums.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
                 </div>
             </Wrapper>
         )

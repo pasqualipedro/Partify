@@ -8,11 +8,11 @@ class ApiRequests {
       redirectUri: "http://www.example.com/callback",
     });
     this.spotifyApi.setAccessToken(
-      `BQCOPiBP-NyW04MBwH1OWaMOYFVxaVq5SLrXwhUU5SpMbYAtvXeC0SCshKPy4SDU4GOxJu22AoJaXEr1y_E`
+      `BQCFPLaSIxGzpvqupq9m9IoFCzfR5UtoXnlgysVHao-Iv--Pu6Xm4DR_KwsSsd7S1EyLMh6M33_nmu3RTpI`
     );
   }
 
-  artistTopTenTracks = async (name) => {
+  TopTenTracks = async (name) => {
     try {
       const artist = await this.spotifyApi.searchArtists(name);
       const topTracks = await this.spotifyApi.getArtistTopTracks(
@@ -26,7 +26,22 @@ class ApiRequests {
   };
 
 
-  artistTopTenAlbums = async (name) => {
+  TopTenAlbums = async (name) => {
+    try {
+      const artist = await this.spotifyApi.searchArtists(name);
+      const topAlbums = await this.spotifyApi.getArtistAlbums(
+        artist.body.artists.items[0].id,
+        `GB`
+      );
+      console.log(topAlbums);
+      return topAlbums
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+  TopTenArtists = async (name) => {
     try {
       const artist = await this.spotifyApi.searchArtists(name);
       const topAlbums = await this.spotifyApi.getArtistAlbums(

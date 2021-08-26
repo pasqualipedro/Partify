@@ -1,7 +1,6 @@
 import PartyfyLogo from '../Components/PartyfyLogo'
 import styled from 'styled-components';
 import MoodCard from '../Components/MoodCard';
-import WebPlayer from '../Components/WebPlayer/index';
 import Footer from '../Components/Footer';
 import api from '../ApiRequests'
 import { Component } from 'react';
@@ -15,9 +14,7 @@ const PartOne = styled.section`
     height: 100vh;
     width: 95vw;
 `;
-const PartTwo = styled.section`
-    background: lightgrey;
-`;
+
 const MoodCardList = styled.div`
     display: flex;
     justify-content: space-around;
@@ -28,7 +25,9 @@ class HomePage extends Component {
 
     state = {
         moods: [`sad`, `happy`, `furious`, `frustrated`, `euphoric`, `Wanna Dance!`, `In Love`, `I´m drunk...`, `energetic`, `anxious`, `lazy`, `heartbreak`, `courageous`, `unstoppable`, `trash`, `as a Queen`, `as a King`, `Rich`, `High`, `Cold`, `Hot`, `free hugs`, ],
-        playlistInfo: []
+        playlistInfo: [],
+        openPlaylist: false,
+        openPlaylistMood: ``
 
     };
 
@@ -37,11 +36,23 @@ class HomePage extends Component {
         const result = await api.randomPlaylistInfo(mood);
         console.log(result);
         this.setState({
-            playlistInfo: result
+            playlistInfo: result,
+            openPlaylistMood: mood
         })
     };
 
-    
+    togglePlaylist = () => {
+        if (this.state.openPlaylist) {
+            this.setState({
+                playlistInfo: [],
+                openPlaylistMood: ``
+            })
+        }
+        this.setState({
+            openPlaylist: !this.state.openPlaylist
+        });
+    };
+
 
     render() {
         return (
@@ -50,17 +61,19 @@ class HomePage extends Component {
                     <PartyfyLogo />
                     <h2>Tell us your mood. We´ll make it happen ;)</h2>
                     <MoodCardList className="">
-                        {this.state.moods.map((element, index) => <MoodCard mood = {element} parentCallBackPlaylistInfo = {this.getMoodPlaylistInfo} key = {index} /> )}
+                        {this.state.moods.map((element, index) => <MoodCard mood={element} parentCallBackPlaylistInfo={this.getMoodPlaylistInfo} key={index} togglePlaylist={this.togglePlaylist} /> )}
                     </MoodCardList>
-                    <PlaylistInfo
-                        // link = {this.state}
-                        // followers = {this.state}
-                        // cover = {this.state}
-                        // tracksArray = {this.state}
-                        // totalTracks = {this.state}
-                    />
+                    
+        
+
                 </PartOne>
                 <Footer />            
+                <PlaylistInfo
+                    togglePlaylist={this.togglePlaylist}
+                    open={this.state.openPlaylist} 
+                    mood={this.state.openPlaylistMood} 
+                    playlistInfo={this.state.playlistInfo}
+                />
             </>
         )
     }

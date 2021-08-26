@@ -53,7 +53,7 @@ class CheckBoxFilterMusicUniverse extends Component {
       this.state.filteredAlbum,
       this.state.filteredSong
     );
-    this.props.getMusics(this.state.search);
+    this.props.getAllInfo(this.state.search);
 
   };
 
