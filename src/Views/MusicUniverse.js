@@ -61,15 +61,16 @@ class MusicUniverse extends Component {
                 <h1>This is Music Universe</h1>
                 <h4>I want to search for:</h4>
                 <CheckBoxFilterMusicUniverse getAllInfo = {this.getAllInfo}  />
-{/*                 getMusics = {this.getMusics} getAlbums = {this.getAlbums}*/}                <div>
+{/*                 getMusics = {this.getMusics} getAlbums = {this.getAlbums}*/}                
+                <div>
                     {this.state.musics.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
                 </div>
-                <div>
+                {/* <div>
                     {this.state.artists.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
                 </div>
                 <div>
                     {this.state.albums.map((element) => <InfoTextBox name = {element.name} id = {element.id} /> )}
-                </div>
+                </div> */}
             </Wrapper>
         )
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./Components/NavBar";
 import HomePage from "./Views/HomePage";
-import BestRankings from './Views/BestRankings';
+import About from './Views/About';
 import MusicUniverse from './Views/MusicUniverse';
 import Carousel from "./Components/Carousel";
 import { createGlobalStyle } from "styled-components";
@@ -68,8 +68,8 @@ function App() {
       <NavBar />
       <Switch>
         <Route exact path="/" component={HomePage}/>
-        <Route path="/best-rankings" component={BestRankings}/>
         <Route path="/music-universe" component={MusicUniverse}/>
+        <Route path="/about" component={About}/>
       </Switch>
     </>
   );

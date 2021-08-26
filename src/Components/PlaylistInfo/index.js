@@ -60,7 +60,7 @@ class PlaylistInfo extends Component {
                             <div className="modal-contentOne">
                                 <p>{this.props.mood}</p>
                                 <ol>
-                                    <li>{this.props.link}</li>
+                                    <li>{this.props.playlistInfo.external_urls.spotify}</li>
                                     <li>teste</li>
                                     <li>teste</li>
                                 </ol>
