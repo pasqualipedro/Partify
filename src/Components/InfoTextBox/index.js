@@ -32,6 +32,9 @@ class InfoTextBox extends Component {
                     <h1>{this.props.name}</h1>
                 </div>
                 <div>
+                    <div>
+                    <img src="Img/infos.png" alt="about"/>
+                    </div>
                     <ol>
                         <li>teste</li>
                         <li>teste</li>

@@ -26,6 +26,7 @@ class HomePage extends Component {
     state = {
         moods: [`sad`, `happy`, `furious`, `frustrated`, `euphoric`, `Wanna Dance!`, `In Love`, `I´m drunk...`, `energetic`, `anxious`, `lazy`, `heartbreak`, `courageous`, `unstoppable`, `trash`, `as a Queen`, `as a King`, `Rich`, `High`, `Cold`, `Hot`, `free hugs`, ],
         playlistInfo: [],
+        playlistImg: [],
         openPlaylist: false,
         openPlaylistMood: ``
 
@@ -34,10 +35,10 @@ class HomePage extends Component {
 
     getMoodPlaylistInfo = async (mood) => {
         const result = await api.randomPlaylistInfo(mood);
-        console.log(result);
         this.setState({
             playlistInfo: result,
-            openPlaylistMood: mood
+            openPlaylistMood: mood,
+            playlistImg: result.images[0].url
         })
     };
 
@@ -61,18 +62,25 @@ class HomePage extends Component {
                     <PartyfyLogo />
                     <h2>Tell us your mood. We´ll make it happen ;)</h2>
                     <MoodCardList className="">
-                        {this.state.moods.map((element, index) => <MoodCard mood={element} parentCallBackPlaylistInfo={this.getMoodPlaylistInfo} key={index} togglePlaylist={this.togglePlaylist} /> )}
+                        {this.state.moods.map((element, index) =>
+                            <MoodCard
+                                mood={element}
+                                parentCallBackPlaylistInfo={this.getMoodPlaylistInfo}
+                                key={index}
+                                togglePlaylist={this.togglePlaylist}
+                            /> 
+                        )}
                     </MoodCardList>
                     
         
 
                 </PartOne>
-                <Footer />            
                 <PlaylistInfo
                     togglePlaylist={this.togglePlaylist}
                     open={this.state.openPlaylist} 
                     mood={this.state.openPlaylistMood} 
                     playlistInfo={this.state.playlistInfo}
+                    playlistImg={this.state.playlistImg}
                 />
             </>
         )

@@ -34,8 +34,8 @@ function NavBar() {
             <PartyfyLogo />
             <ul>
                 <li><Link to="/">Home</Link></li>
-                <li><Link to="/best-rankings">Best Rankings</Link></li>
                 <li><Link to="/music-universe">Music Universe</Link></li>
+                <li><Link to="/about">About</Link></li>
             </ul>
         </Wrapper>
     )

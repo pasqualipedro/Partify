@@ -7,6 +7,7 @@ const Wrapper = styled.div`
 
     
     div {
+    transition: 300ms;
     background: grey;
     width: 175px;
     height: 100px;
@@ -16,9 +17,11 @@ const Wrapper = styled.div`
     cursor: pointer;
 
         &:hover {
-            transform: translateY(1px);
+            perspective: 1000px;
+            transform: scale(0.98) ${'' /* skewX(10deg) skewY(10deg) */} rotateY(40deg);
             opacity: 0.75;
             background: brown;
+            
         }
     }
 

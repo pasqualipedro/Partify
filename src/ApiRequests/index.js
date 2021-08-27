@@ -3,12 +3,12 @@ import SpotifyWebApi from "spotify-web-api-node";
 class ApiRequests {
   constructor() {
     this.spotifyApi = new SpotifyWebApi({
-      clientId: "3b8aed36648c478882c6f606dc906e72",
+      clientId: "3b8aed36648c478882c6f606dc906e72", 
       clientSecret: "7890e522333d4947bc6d68c20e6d57a5",
       redirectUri: "http://www.example.com/callback",
     });
     this.spotifyApi.setAccessToken(
-      `BQBKvVq7BBwfNafszY4hsdhbCiUsMHl1W2V9Ff5d7kzy6nBPSx4_oYXh9xjLYKmP3uUBc3HQrcnYpaNsuUo`
+      `BQC9VDGuVS-DjnBzD5FgoqDUH653iz2iXyeEsJrtdxhRDRFxvjytlPjn-0grNxnOF8Lidr9Sns8RnYBzLWk`
     );
   }
 
@@ -36,7 +36,7 @@ class ApiRequests {
     }
   };
 
-  
+  //-OKOK
   randomPlaylistInfo = async (mood) => {
     try {
       const moodPlaylist = await this.spotifyApi.searchPlaylists(mood);
