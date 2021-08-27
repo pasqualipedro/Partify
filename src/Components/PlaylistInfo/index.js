@@ -54,15 +54,20 @@ class PlaylistInfo extends Component {
     render() {
         return (
             <Wrapper>
-                {this.props.open && (
+                {this.props.open && this.props.playlistInfo.id && (
                     <div className="modalOne" >
                         <div className="overlayOne" onClick={this.props.togglePlaylist}></div>
                             <div className="modal-contentOne">
                                 <p>{this.props.mood}</p>
+                                {console.log( "teste teste teste", this.props.playlistInfo)}
                                 <ol>
+                                    <li>
+                                        <a href={this.props.playlistInfo.external_urls} >
+                                            <img src="../../Img/play.png" alt="playbutton" />
+                                        </a>
+                                    </li>
+                                    <li>Seguidores: {/* {this.props.playlistInfo.followers} */}</li>
                                     <li>{this.props.playlistInfo.external_urls.spotify}</li>
-                                    <li>teste</li>
-                                    <li>teste</li>
                                 </ol>
 
                             </div>

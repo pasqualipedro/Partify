@@ -8,10 +8,11 @@ class ApiRequests {
       redirectUri: "http://www.example.com/callback",
     });
     this.spotifyApi.setAccessToken(
-      `BQBvovV9MVGntQNi1VQXSEAetKMuyzzl5bLMS32wD_lnyO--Bie_FQXbSgtql_3gc1WaUhifgnUdgbVAeTY`
+      `BQBKvVq7BBwfNafszY4hsdhbCiUsMHl1W2V9Ff5d7kzy6nBPSx4_oYXh9xjLYKmP3uUBc3HQrcnYpaNsuUo`
     );
   }
 
+  //-OKOK
   TopTenTracks = async (name) => {
     try {
       const artist = await this.spotifyApi.searchArtists(name);
@@ -25,37 +26,17 @@ class ApiRequests {
     }
   };
 
-
-  TopTenAlbums = async (name) => {
-    try {
-      const artist = await this.spotifyApi.searchArtists(name);
-      const topAlbums = await this.spotifyApi.getArtistAlbums(
-        artist.body.artists.items[0].id,
-        `GB`
-      );
-      console.log(topAlbums);
-      return topAlbums
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-
+  //-OKOK
   TopTenArtists = async (name) => {
     try {
-      const artist = await this.spotifyApi.searchArtists(name);
-      const topAlbums = await this.spotifyApi.getArtistAlbums(
-        artist.body.artists.items[0].id,
-        `GB`
-      );
-      console.log(topAlbums);
-      return topAlbums
+      const artists = await this.spotifyApi.searchArtists(name);
+      return artists.body.artists.items
     } catch (error) {
       console.log(error);
     }
   };
 
-
+  
   randomPlaylistInfo = async (mood) => {
     try {
       const moodPlaylist = await this.spotifyApi.searchPlaylists(mood);

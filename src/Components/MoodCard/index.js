@@ -1,7 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
 import styled from 'styled-components';
-import PlaylistInfo from '../PlaylistInfo';
 
 const Wrapper = styled.div`
     
