@@ -29,7 +29,7 @@ class MusicUniverse extends Component {
         this.setState ({
             tracks: await this.getTracks(name),
             artists: await this.getArtists(name),
-            /* albums: await this.getAlbums(name) */
+            albums: await this.getAlbums(name)
         })
     };
 
@@ -44,7 +44,7 @@ class MusicUniverse extends Component {
     };
 
     getAlbums = async (name) => {
-        const albums = await api.TopTenAlbums(name);
+        const albums = await api.TopTenAlbumsRandomArtist(name);
         return albums
     };
 
@@ -55,17 +55,18 @@ class MusicUniverse extends Component {
                 <h1>This is Music Universe</h1>
                 <h4>I want to search for:</h4>
                 <CheckBoxFilterMusicUniverse getAllInfo={this.getAllInfo}/>
-{/*                 getSongs = {this.getTracks} getAlbums = {this.getAlbums}*/}
                 <div>
+                    <h1>Tracks here!</h1>
                     {this.state.tracks.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
                 </div>
                 <div>
+                    <h1>Artists here!</h1>
                     {this.state.artists.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
-{/*                     {console.log(this.state.artists)}
- */}                </div>
-                {/* <div>
+                </div>
+                <div>
+                    <h1>Albums here!</h1>
                     {this.state.albums.map((element, index) => <InfoTextBox name = {element.name} id = {index} /> )}
-                </div> */}
+                </div>
             </Wrapper>
         )
 

@@ -17,8 +17,8 @@ const Wrapper = styled.div`
     cursor: pointer;
 
         &:hover {
-            perspective: 1000px;
-            transform: scale(0.98) ${'' /* skewX(10deg) skewY(10deg) */} rotateY(40deg);
+            ${'' /* perspective: 1000px; */}
+            transform: scale(0.975) ${'' /* skewX(10deg) skewY(10deg) */} ${'' /* rotateY(40deg) */};
             opacity: 0.75;
             background: brown;
             
