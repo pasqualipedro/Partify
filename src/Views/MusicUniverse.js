@@ -16,6 +16,11 @@ const Wrapper = styled.div`
         justify-content: space-around;
         flex-wrap: wrap;
     }
+
+    .carousel {
+        font-family: Roboto;
+        text-align: center;
+    }
 `;
 
 const breakPoints = [
@@ -23,7 +28,8 @@ const breakPoints = [
     {width: 500, itemsToShow: 2},
     {width: 768, itemsToShow: 3},
     {width: 1200, itemsToShow: 4}
-];
+]
+
 
 class MusicUniverse extends Component {
 
@@ -77,7 +83,10 @@ class MusicUniverse extends Component {
                     <h1>Tracks here!</h1>
                     {this.state.tracks.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
                 </div>
-	@@ -66,7 +91,7 @@ class MusicUniverse extends Component {
+                <div>
+                    <h1>Artists here!</h1>
+                    {this.state.artists.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
+                </div>
                 <div>
                     <h1>Albums here!</h1>
                     {this.state.albums.map((element, index) => <InfoTextBox name = {element.name} id = {index} /> )}
