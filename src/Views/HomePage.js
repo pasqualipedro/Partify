@@ -19,9 +19,12 @@ const PartOne = styled.section`
 `;
 
 const MoodCardList = styled.div`
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(150px, 1fr));
+    ${'' /* justify-content: space-around;
+    flex-wrap: wrap; */}
+    margin: 25px;
+
 `;
 
 class HomePage extends Component {

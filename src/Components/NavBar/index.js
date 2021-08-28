@@ -16,6 +16,7 @@ const Wrapper = styled.div`
         align-itens: center;
         justify-content: space-around;
         letter-spacing: 3px;
+        flex-wrap: wrap;
     }
 
     li {
@@ -40,9 +41,9 @@ const Wrapper = styled.div`
 
 function NavBar() {
     return(
-        <Wrapper>
+        <Wrapper className="alignInXY">
             <PartyfyLogoSmall className="logoSmall"/>
-            <ul>
+            <ul className="links">
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/music-universe">Music Universe</Link></li>
                 <li><Link to="/about">About</Link></li>
