@@ -25,7 +25,7 @@ function BestRankings() {
             </div>
             <div className="authorInfoCards">
                 <div className="authorCard">
-                <h1>Pedro</h1>
+                    <h1>Pedro</h1>
                     <img src="Img/infos.png" alt="about"/>
                     <p>
                         <span class="twistFont">Twist</span>
@@ -34,7 +34,7 @@ function BestRankings() {
                     </p>
                 </div>
                 <div className="authorCard">
-                <h1>Luan</h1>
+                    <h1>Luan</h1>
                     <img src="Img/infos.png" alt="about"/>
                     <p>
                         <span class="twistFont">Twist</span>
