@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     display: block;
     margin: 100px auto 0;
     font-size: 18px;
+    
 }
 
     .modalPlaylist, .overlayLayer {
@@ -27,7 +28,7 @@ const Wrapper = styled.div`
     }
     .modalPlaylist-content {
         position: absolute;
-        top: 40%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         line-height: 1.4;
@@ -35,10 +36,12 @@ const Wrapper = styled.div`
         padding: 14px 28px;
         border-radius: 3px;
         max-width: 600px;
-        min-width: 300px;
+        min-width: 200px;
         max-height: 500px;
         overflow-y:auto;
         overflow-x:hidden;
+        color: rgb(23, 32, 42);
+        
     }
 
     .close-modal {
@@ -51,6 +54,24 @@ const Wrapper = styled.div`
     .playlistCover {
         width: 200px;
         height: 200px;
+        border-radius: 10px;
+    }
+
+    .trackList {
+        text-decoration: none;
+        color: rgb(23, 32, 42);
+    }
+
+    .coverPlayButton {
+        padding: 0;
+        margin: 15px;
+        display: flex;
+        transition: 400ms;
+        cursor: pointer;
+
+            &:hover {
+                transform: scale(1.025);                
+            }
     }
 
 `;
@@ -69,21 +90,27 @@ class PlaylistInfo extends Component {
                         <div className="overlayLayer" onClick={this.props.togglePlaylist}></div>
                             <div className="modalPlaylist-content">
 
-                                {console.log(this.props.playlistInfo)}
-
-                                <h1>I´m feeling like...{this.props.mood}</h1>
-                                <img className="playlistCover" src={this.props.playlistImg} alt="playbutton" />
-                                <a href={this.props.playlistInfo.external_urls.spotify}
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-                                    <img src="../../Img/play.png" alt="playbutton" />
-                                </a>
-                                <h5>Playlist name: {this.props.playlistInfo.name}</h5>
-                                <h5>Followers: {this.props.playlistInfo.followers.total}</h5>
-                                <h5>Tracks: {this.props.playlistInfo.tracks.total}</h5>
+                                <h1>I´m feeling like... {this.props.mood}</h1>
+                                <div className="alignInY">
+                                    <a
+                                        href={this.props.playlistInfo.external_urls.spotify}
+                                        target="_blank"
+                                        rel="noopener noreferrer" >
+                                    <img
+                                        className="playlistCover coverPlayButton"
+                                        src={this.props.playlistImg}
+                                        alt="playbutton" />
+                                    </a>
+                                </div>
+                                <div className="alignInY">
+                                    <h5>Playlist name: {this.props.playlistInfo.name}</h5>
+                                    <h6>Followers: {this.props.playlistInfo.followers.total}</h6>
+                                    <h6>Tracks: {this.props.playlistInfo.tracks.total}</h6>
+                                </div>
                                 <ul>                                       
                                     {this.props.playlistInfo.tracks.items.map((element, index) =>
                                         <a
+                                            className="trackList"
                                             href={element.track.external_urls.spotify}
                                             target="_blank"
                                             rel="noopener noreferrer">

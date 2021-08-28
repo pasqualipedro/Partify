@@ -28,7 +28,7 @@ class CheckBoxFilterMusicUniverse extends Component {
 
   searchButton = (event) => {
     event.preventDefault();
-    this.props.getAllInfo(this.state.search);    
+    this.props.getAllInfo(this.state.search);
   };
 
   render() {
