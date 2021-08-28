@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import PartyfyLogo from '../PartyfyLogo';
+import PartyfyLogo from '../PartyfyLogoSmall';
 
 const Wrapper = styled.div`
     display: flex;
