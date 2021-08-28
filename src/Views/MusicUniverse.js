@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import CheckBoxFilterMusicUniverse from '../Components/CheckBoxFilterMusicUniverse';
 import InfoTextBox from '../Components/InfoTextBox';
 import api from '../ApiRequests'
+import Carousel from "react-elastic-carousel";
+import Card from "../Components/Carousel/Card";
 
 const Wrapper = styled.div`
     * {
@@ -11,11 +13,17 @@ const Wrapper = styled.div`
     }
 
     div {
-        display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
     }
 `;
+
+const breakPoints = [
+    {width: 1, itemsToShow: 1},
+    {width: 500, itemsToShow: 2},
+    {width: 768, itemsToShow: 3},
+    {width: 1200, itemsToShow: 4}
+];
 
 class MusicUniverse extends Component {
 
@@ -29,7 +37,7 @@ class MusicUniverse extends Component {
         this.setState ({
             tracks: await this.getTracks(name),
             artists: await this.getArtists(name),
-            /* albums: await this.getAlbums(name) */
+            albums: await this.getAlbums(name)
         })
     };
 
@@ -44,7 +52,7 @@ class MusicUniverse extends Component {
     };
 
     getAlbums = async (name) => {
-        const albums = await api.TopTenAlbums(name);
+        const albums = await api.TopTenAlbumsRandomArtist(name);
         return albums
     };
 
@@ -55,15 +63,23 @@ class MusicUniverse extends Component {
                 <h1>This is Music Universe</h1>
                 <h4>I want to search for:</h4>
                 <CheckBoxFilterMusicUniverse getAllInfo={this.getAllInfo}/>
-{/*                 getSongs = {this.getTracks} getAlbums = {this.getAlbums}*/}
-                <div>
+                <Carousel className="carousel" breakPoints={breakPoints}>
+                    <Card number="1" />
+                    <Card number="2" />
+                    <Card number="3" />
+                    <Card number="4" />
+                    <Card number="5" />
+                    <Card number="6" />
+                    <Card number="7" />
+                    <Card number="8" />
+                </Carousel>
+                {/* <div>
+                    <h1>Tracks here!</h1>
                     {this.state.tracks.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
                 </div>
+	@@ -66,7 +91,7 @@ class MusicUniverse extends Component {
                 <div>
-                    {this.state.artists.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
-{/*                     {console.log(this.state.artists)}
- */}                </div>
-                {/* <div>
+                    <h1>Albums here!</h1>
                     {this.state.albums.map((element, index) => <InfoTextBox name = {element.name} id = {index} /> )}
                 </div> */}
             </Wrapper>

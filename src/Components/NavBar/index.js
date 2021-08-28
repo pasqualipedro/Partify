@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import PartyfyLogo from '../PartyfyLogo';
 
 const Wrapper = styled.div`
     display: flex;
@@ -26,12 +25,21 @@ const Wrapper = styled.div`
         font-family: Roboto;
         text-decoration: none;
     }
+    
+    .logoPLetter {
+        color: #dd7e6b;
+        font-size: 45px;
+        font-family: 'Monoton';
+        margin: 0;
+        padding: 0;
+    }
+
 `;
 
 function NavBar() {
     return(
         <Wrapper>
-            <PartyfyLogo />
+            <h1 className="logoPLetter">P</h1>
             <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/music-universe">Music Universe</Link></li>
