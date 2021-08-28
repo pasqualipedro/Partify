@@ -1,23 +1,26 @@
 import React from 'react';
 import { Component } from 'react';
+import styled from 'styled-components';
 
+const Wrapper = styled.div`
+
+`;
 
 class SearchBar extends Component {
 
     render() {
         return (
-            <form action="/" method="get">
-                <label htmlFor="header-search">
-                    <span className="visually-hidden">Search for songs, artists or albuns</span>
-                </label>
-                <input
-                    type="text"
-                    id="header-search"
-                    placeholder="Search anything"
-                    name="search" 
-                />
-                <button type="submit">Search</button>
-            </form>
+            <Wrapper>
+                <form action="/" method="get">
+                    <input
+                        type="text"
+                        id="header-search"
+                        placeholder="Search anything"
+                        name="search" 
+                    />
+                    <button type="submit">Seasadsadsadsarch</button>
+                </form>
+            </Wrapper>
         )
     }
 };

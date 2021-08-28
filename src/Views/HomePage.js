@@ -34,7 +34,7 @@ const PartOne = styled.section`
 class HomePage extends Component {
 
     state = {
-        moods: [`sad`, `happy`, `furious`, `frustrated`, `euphoric`, `Wanna Dance!`, `In Love`, `I´m drunk...`, `energetic`, `anxious`, `lazy`, `heartbreak`, `courageous`, `unstoppable`, `trash`, `as a Queen`, `as a King`, `Rich`, `High`, `Cold`, `Hot`, `free hugs`, ],
+        moods: [`sad`, `happy`, `furious`, `frustrated`, `euphoric`, `wanna dance!`, `in love`, `drunk...`, `energetic`, `anxious`, `lazy`, `heartbreak`, `courageous`, `unstoppable`, `trash`, `as a queen`, `as a king`, `Rich`, `High`, `poor`, `cold`, `hot`, `free hugs`, `hungry`, `adventurous`, `zzz`, `sexy`, `strong`],
         playlistInfo: [],
         playlistImg: [],
         openPlaylist: false,
