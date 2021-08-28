@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     transition: 300ms;
     background: grey;
     width: 180px;
-    height: 200px;
+    height: 250px;
     margin: 5px;
     padding: 10px;
     border-radius: 5px;
