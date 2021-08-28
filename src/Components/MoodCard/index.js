@@ -13,14 +13,17 @@ const Wrapper = styled.div`
     height: 100px;
     margin: 5px;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     cursor: pointer;
 
         &:hover {
-            ${'' /* perspective: 1000px; */}
-            transform: scale(0.975) ${'' /* skewX(10deg) skewY(10deg) */} ${'' /* rotateY(40deg) */};
+            transform: scale(0.975);
             opacity: 0.75;
-            background: brown;
+            background: white;
+            color: rgb(23, 32, 42);
+            border-radius: 15px;
+            border-color: #dd7e6b;
+            border-width: 2px;
             
         }
     }
@@ -28,7 +31,6 @@ const Wrapper = styled.div`
     p {
     font-family: Roboto;
     font-size: 1.6em;
-    color: white;
     }
 `;
 
@@ -47,7 +49,7 @@ class MoodCard extends Component {
     render() {
         return (
             <Wrapper>
-                <div className="card card-text border-warning" onClick={this.handleSubmitButton}>
+                <div className="card card-text" onClick={this.handleSubmitButton}>
                     <p>{this.props.mood}</p>
                 </div>
             </Wrapper>

@@ -43,8 +43,39 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: Roboto;
+    background-color: rgb(23, 32, 42);
+    color: rgb(255, 255, 255);
+
   }
 
+  /*---GENERAL ALIGNMENT CLASSES---*/
+  .alignInY {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+  .alignInX {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+  } 
+
+  .alignInXFlexStart {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start; 
+  }
+
+  .alignInXY {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+  }
 
 `;
 

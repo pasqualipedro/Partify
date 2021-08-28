@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 
 const Logo = styled.div`
-    margin: 0px;
+    margin: 5px;
     padding: 0px;
-    line-height: 22px;
+    line-height: 40px;
     
 
     .monotonFont {
@@ -19,31 +19,31 @@ const Logo = styled.div`
 
     .firstLetter {
         color: #dd7e6b;
-        font-size: 25px;
+        font-size: 75px;
         
     }
 
     .middleTextAR {
         color: white;
-        font-size: 32px;
-        letter-spacing: 1px;
+        font-size: 85px;
+        letter-spacing: 4px;
     }
 
     .middleTextTY {
         color: white;
-        font-size: 32px;
+        font-size: 85px;
     }
 
     .lastLetter {
         color: #6fa8dc;
-        font-size: 25px;
-        letter-spacing: -2px;
+        font-size: 75px;
+        letter-spacing: -5px;
 
     }
 `;
 
 
-function PartyfyLogoSmall() {
+function PartyfyLogo() {
     return(
         <Logo>
             <span className="monotonFont firstLetter" >P</span>
@@ -55,4 +55,4 @@ function PartyfyLogoSmall() {
     )
 }
 
-export default PartyfyLogoSmall;
+export default PartyfyLogo;
