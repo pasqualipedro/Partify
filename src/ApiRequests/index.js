@@ -8,7 +8,9 @@ class ApiRequests {
       redirectUri: "http://www.example.com/callback",
     });
     this.spotifyApi.setAccessToken(
-      `BQARImGUkx9I5VCxFUkQqXkOeaYk2HmLtfpymdzmOaoN2HhfMws920Uuz17cbkuYjrnvsL63qP5mxIjRNtY`
+
+      `BQA5fUlfLw_CGvNezjaKTK5rR6qS92j6qFYwssTYujlHkUcy2Fcyj8fxnbQKwd4xhyhlAdw83Me5vHAXYJs`
+
     );
   }
 

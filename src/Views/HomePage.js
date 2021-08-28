@@ -1,18 +1,21 @@
 import PartyfyLogo from '../Components/PartyfyLogo'
+import NavBar from '../Components/NavBar';
 import styled from 'styled-components';
 import MoodCard from '../Components/MoodCard';
-import Footer from '../Components/Footer';
 import api from '../ApiRequests'
 import { Component } from 'react';
 import PlaylistInfo from '../Components/PlaylistInfo';
 
 
 const PartOne = styled.section`
-    background-color: white;
     ${'' /* background-image: url("../Img/person.png"); */}
     background-size: cover;
     height: 100vh;
     width: 95vw;
+
+    .logoAndSlogan {
+        margin: 35px
+    }
 `;
 
 const MoodCardList = styled.div`
@@ -59,8 +62,13 @@ class HomePage extends Component {
         return (
             <>  
                 <PartOne>
-                    <PartyfyLogo />
-                    <h2>Tell us your mood. We´ll make it happen ;)</h2>
+                    <div className="alignInY">
+                        <div className="logoAndSlogan alignInY">
+                            <PartyfyLogo />
+                            <h5>share the dance floor</h5>
+                        </div>
+                        <h2>Tell us your mood. We´ll make it happen ;)</h2>
+                    </div>
                     <MoodCardList className="">
                         {this.state.moods.map((element, index) =>
                             <MoodCard

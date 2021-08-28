@@ -5,40 +5,14 @@ import styled from 'styled-components';
 const Logo = styled.div`
     margin: 0px;
     padding: 0px;
-    line-height: 22px;
     
-
     .monotonFont {
         font-family: 'Monoton';
     }
-
-    .bebasneueFont {
-        font-family: 'Bebas Neue';
-    }
-
-
     .firstLetter {
         color: #dd7e6b;
-        font-size: 25px;
+        font-size: 40px;
         
-    }
-
-    .middleTextAR {
-        color: white;
-        font-size: 32px;
-        letter-spacing: 1px;
-    }
-
-    .middleTextTY {
-        color: white;
-        font-size: 32px;
-    }
-
-    .lastLetter {
-        color: #6fa8dc;
-        font-size: 25px;
-        letter-spacing: -2px;
-
     }
 `;
 
@@ -46,11 +20,7 @@ const Logo = styled.div`
 function PartyfyLogoSmall() {
     return(
         <Logo>
-            <span className="monotonFont firstLetter" >P</span>
-            <span className="bebasneueFont middleTextAR"> A R</span>
-            <br/>
-            <span className="bebasneueFont middleTextTY">TY.</span>
-            <span className="monotonFont lastLetter" >FY</span>
+            <h1 className="monotonFont firstLetter" >P</h1>
         </Logo>
     )
 }
