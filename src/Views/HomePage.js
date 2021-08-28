@@ -1,5 +1,4 @@
 import PartyfyLogo from '../Components/PartyfyLogo'
-import NavBar from '../Components/NavBar';
 import styled from 'styled-components';
 import MoodCard from '../Components/MoodCard';
 import api from '../ApiRequests'
@@ -8,7 +7,6 @@ import PlaylistInfo from '../Components/PlaylistInfo';
 
 
 const PartOne = styled.section`
-    ${'' /* background-image: url("../Img/person.png"); */}
     background-size: cover;
     height: 100vh;
     width: 95vw;
@@ -16,16 +14,22 @@ const PartOne = styled.section`
     .logoAndSlogan {
         margin: 35px
     }
+
+    .alignGrid {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .moodCardList {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 180px);
+        align-items: center;
+        justify-items: center;
+        margin: 10px;
+    }
 `;
 
-const MoodCardList = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(150px, 1fr));
-    ${'' /* justify-content: space-around;
-    flex-wrap: wrap; */}
-    margin: 25px;
-
-`;
 
 class HomePage extends Component {
 
@@ -37,7 +41,6 @@ class HomePage extends Component {
         openPlaylistMood: ``
 
     };
-
 
     getMoodPlaylistInfo = async (mood) => {
         const result = await api.randomPlaylistInfo(mood);
@@ -60,7 +63,6 @@ class HomePage extends Component {
         });
     };
 
-
     render() {
         return (
             <>  
@@ -72,17 +74,18 @@ class HomePage extends Component {
                         </div>
                         <h2>Tell us your mood. We´ll make it happen ;)</h2>
                     </div>
-                    <MoodCardList className="">
-                        {this.state.moods.map((element, index) =>
-                            <MoodCard
-                                mood={element}
-                                parentCallBackPlaylistInfo={this.getMoodPlaylistInfo}
-                                key={index}
-                                togglePlaylist={this.togglePlaylist}
-                            /> 
-                        )}
-                    </MoodCardList>
-                    
+                    <div className="" >
+                        <div className="moodCardList">
+                            {this.state.moods.map((element, index) =>
+                                <MoodCard
+                                    mood={element}
+                                    parentCallBackPlaylistInfo={this.getMoodPlaylistInfo}
+                                    key={index}
+                                    togglePlaylist={this.togglePlaylist}
+                                /> 
+                            )}
+                        </div>
+                    </div>
         
 
                 </PartOne>
