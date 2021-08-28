@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PartyfyLogoSmall from '../PartyfyLogoSmall';
 
+
 const Wrapper = styled.div`
     display: flex;
     justify-content: center;
@@ -25,6 +26,14 @@ const Wrapper = styled.div`
         color: grey;
         font-family: Roboto;
         text-decoration: none;
+    }
+
+    .logoPLetter {
+        color: #dd7e6b;
+        font-size: 45px;
+        font-family: 'Monoton';
+        margin: 0;
+        padding: 0;
     }
 
 `;

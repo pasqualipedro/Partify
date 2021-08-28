@@ -38,7 +38,6 @@ const Logo = styled.div`
         color: #6fa8dc;
         font-size: 75px;
         letter-spacing: -5px;
-
     }
 `;
 

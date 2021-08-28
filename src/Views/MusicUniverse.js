@@ -13,7 +13,6 @@ const Wrapper = styled.div`
     }
 
     div {
-        display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
     }
