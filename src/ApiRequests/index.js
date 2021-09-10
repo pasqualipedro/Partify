@@ -9,7 +9,7 @@ class ApiRequests {
     });
     this.spotifyApi.setAccessToken(
 
-      `BQAka3ba4qlhw41hvo6uzADLM3-4QTlG4lQSgFu_7dkUR-9RPOSeMlqrKBTEFCEtt6BA3No984GcCA0bZ6c`
+      `BQDQsMwU-yGnvXMs9--Z8lVFQ2zMUwPq7UHYZZEDzLnw0z6KJh5jbqBN4Ad-m0tNgE__MMpoKeJ6Bb8ur5c`
 
     );
   }
