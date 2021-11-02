@@ -1,42 +1,14 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+
 import NavBar from "./Components/NavBar";
+import Carousel from "./Components/Carousel";
+
 import HomePage from "./Views/HomePage";
 import About from './Views/About';
 import MusicUniverse from './Views/MusicUniverse';
-import Carousel from "./Components/Carousel";
+
 import { createGlobalStyle } from "styled-components";
-
-/* const axios = require('axios');
-
-const postAuthentication = () => {
-  axios({
-    url: 'https://accounts.spotify.com/api/token',
-    method: 'post',
-    params: {
-      grant_type: 'client_credentials'
-    },
-    headers: {
-      'Accept':'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },
-    auth: {
-      username: 'YOUR-CLIENT-ID',
-      password: 'YOUR-CLIENT-SECRET'
-    }
-  })
-  .then(function(response) {
-      console.log(response);
-  })
-  .catch(function(error) {
-  });
-};
-document.getElementById('get-country-btn').addEventListener('click', () => {
-  const userInput = document.getElementById('country-name-input').value;
-  getCountryInfo(userInput);
-}); */
-
-
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -78,18 +50,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
 `;
-
-/* font-family: 'Monoton', cursive;
-font-family: 'Roboto', sans-serif; */
-
-/* const CardFeaturesList = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: rgb(255, 255, 255);
-  text-family: Roboto;
-`; */
 
 function App() {
 
