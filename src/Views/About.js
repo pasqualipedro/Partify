@@ -1,6 +1,5 @@
 import { Component } from "react";
 import styled from "styled-components";
-
 const Wrapper = styled.div`
   * {
     display: flex;
@@ -10,32 +9,30 @@ const Wrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
   }
-
   .explainContainer {
     display: flex;
     justify-content: space-around;
   }
-
   .infoTextBox {
     background: grey;
     width: 275px;
     margin: 5px;
     padding: 15px;
     border-radius: 5px;
-
     ul {
     display: flex;
     flex-orientation: row;   
     flex-wrap: wrap;
     justify-content: start;    
     }
-
   }
-  
   .aboutPageIntroText {
       margin: 25px;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3c209bde0fc469758f0116a353a72fcd9fc894f
   .authorCard {
     background: grey;
     width: 400px;
@@ -43,7 +40,10 @@ const Wrapper = styled.div`
     border-radius: 5px;
     margin: 5px;
     padding: 15px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3c209bde0fc469758f0116a353a72fcd9fc894f
     ul {
       display: flex;
       flex-orientation: column;
@@ -51,9 +51,13 @@ const Wrapper = styled.div`
       flex-wrap: wrap;
     }
   }
+<<<<<<< HEAD
 
   }
 
+=======
+  }
+>>>>>>> e3c209bde0fc469758f0116a353a72fcd9fc894f
   .authorImg2 {
     display: block;
     width: 128px;
@@ -64,7 +68,10 @@ const Wrapper = styled.div`
     object-fit: cover;
     margin-top: 15px;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3c209bde0fc469758f0116a353a72fcd9fc894f
   .authorImg1 {
     display: block;
     width: 128px;
@@ -75,9 +82,11 @@ const Wrapper = styled.div`
     object-fit: cover;
     margin-top: 15px;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> e3c209bde0fc469758f0116a353a72fcd9fc894f
 `;
-
 class About extends Component {
   render() {
     return (
@@ -98,7 +107,6 @@ class About extends Component {
               <li>. Deployed with Herouku</li>
             </ul>
           </div>
-
           <div className="infoTextBox">
             <h1>Why?</h1>
             <ul>
@@ -114,9 +122,7 @@ class About extends Component {
             </ul>
           </div>
         </div>
-
         {/* AUTHORS INFO BELLOW */}
-
         <div>
           {/* PEDRO */}
           <div className="authorCard">
@@ -138,7 +144,6 @@ class About extends Component {
               </ul>
             </p>
           </div>
-
           {/* LUAN */}
           <div className="authorCard">
             <img src="Img/Luan.jpg" alt="about" class="authorImg2"/>
@@ -165,5 +170,4 @@ class About extends Component {
     );
   }
 }
-
 export default About;

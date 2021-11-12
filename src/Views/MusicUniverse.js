@@ -21,22 +21,36 @@ const Wrapper = styled.div`
         font-family: Roboto;
         text-align: center;
     }
+
+    .titleBlock{
+        display: flex;
+        flex-orientation: column;
+        margin: 25px;
+    }
+
+    .itensCardList {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 180px);
+        align-items: center;
+        justify-items: center;
+        margin: 10px;
+    }
 `;
 
-const breakPoints = [
+/* const breakPoints = [
     {width: 1, itemsToShow: 1},
     {width: 500, itemsToShow: 2},
     {width: 768, itemsToShow: 3},
     {width: 1200, itemsToShow: 4}
-]
+] */
 
 
 class MusicUniverse extends Component {
 
     state = {
         tracks: [],
-        albums: [],
-        artists: []
+        artists: [],
+        albums: []
     };
 
     getAllInfo = async (name) => {
@@ -45,7 +59,15 @@ class MusicUniverse extends Component {
             artists: await this.getArtists(name),
             albums: await this.getAlbums(name)
         })
+        console.log(`tracks`, this.state.tracks, `artists`, this.state.artists, `albums`, this.state.albums);
     };
+
+//- track url - 
+
+//- artist url -
+
+//- album url - 
+//- album img - 
 
     getTracks = async (name) => {
         const tracks = await api.TopTenTracks(name);
@@ -66,31 +88,32 @@ class MusicUniverse extends Component {
     render() {
         return (
             <Wrapper>
-                <h1>This is Music Universe</h1>
-                <h4>I want to search for:</h4>
-                <CheckBoxFilterMusicUniverse getAllInfo={this.getAllInfo}/>
-                <Carousel className="carousel" breakPoints={breakPoints}>
-                    <Card number="1" />
-                    <Card number="2" />
-                    <Card number="3" />
-                    <Card number="4" />
-                    <Card number="5" />
-                    <Card number="6" />
-                    <Card number="7" />
-                    <Card number="8" />
-                </Carousel>
-                {/* <div>
-                    <h1>Tracks here!</h1>
-                    {this.state.tracks.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
+                <div className="alignInY titleBlock">
+                    <h1>This is Music Universe</h1>
+                    <CheckBoxFilterMusicUniverse getAllInfo={this.getAllInfo}/>
                 </div>
-                <div>
-                    <h1>Artists here!</h1>
-                    {this.state.artists.map((element, index) => <InfoTextBox name={element.name} id={index} /> )}
-                </div>
-                <div>
-                    <h1>Albums here!</h1>
-                    {this.state.albums.map((element, index) => <InfoTextBox name = {element.name} id = {index} /> )}
-                </div> */}
+                <hr/>   
+                    <div className="alignInY">
+                        <h1>Tracks here!</h1>
+                            <div className="">
+                                {this.state.tracks.map((element, index) => <InfoTextBox name={element.name} id={index} itIs={`track`} link={element.external_urls.spotify} /> )}
+                            </div>
+                    </div>
+                <hr/>
+                    <div className="alignInY">
+                        <h1>Artists here!</h1>
+                            <div>
+                                {this.state.artists.map((element, index) => <InfoTextBox name={element.name} id={index} itIs={`artist`} link={element.external_urls.spotify} /> )}
+                            </div>
+                    </div>
+                <hr/>
+                    <div className="alignInY">
+                        <h1>Albums here!</h1>
+                        <h7>*random based on all searched artists</h7>
+                            <div>
+                                {this.state.albums.map((element, index) => <InfoTextBox name={element.name} id={index} itIs={`album`} link={element.external_urls.spotify} img={element.images[1].url} /> )}
+                            </div>    
+                    </div>
             </Wrapper>
         )
 

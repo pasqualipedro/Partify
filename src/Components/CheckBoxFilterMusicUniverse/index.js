@@ -5,11 +5,23 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   form {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    width: 75vw;
-    background: red;
+    width: 300px;
+    margin: 30px;
   }
+
+  .roundedSearchBar {
+    border-radius: 5px;
+    margin: 0;
+  }
+
+  .button {
+    border-radius: 5px;
+    margin: 0;
+
+  }
+
 `;
 
 class CheckBoxFilterMusicUniverse extends Component {
@@ -34,18 +46,25 @@ class CheckBoxFilterMusicUniverse extends Component {
   render() {
     return (
       <Wrapper>
-        <form >
-          <label>Search for songs, artists or albuns</label>
-          <input
-            type="text"
-            id="header-search"
-            placeholder="Search anything"
-            name="search"
-            value={this.state.search}
-            onChange={(event) => this.handleInput(event)}
-          />
-        </form>
-          <button type="submit" onClick={this.searchButton} >Search</button>
+        <div className="alignInY">
+          <h4>Search for songs, artists or albuns:</h4>
+          <form className="">
+            <input
+              className="roundedSearchBar"
+              type="text"
+              id="header-search"
+              placeholder="Search anything"
+              name="search"
+              value={this.state.search}
+              onChange={(event) => this.handleInput(event)}
+            />
+            <button
+              className="button"
+              type="submit"
+              onClick={this.searchButton} >Search
+            </button>
+          </form>
+        </div>
       </Wrapper>
     );
   }

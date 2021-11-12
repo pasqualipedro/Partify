@@ -4,44 +4,48 @@ import styled from 'styled-components';
 
 
 const Wrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    
+    .box {
+    transition: 300ms;
     background: grey;
-    max-width: 200px;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 15px;
+    width: 180px;
+    height: 250px;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: orange;
+
+        &:hover {
+            transform: scale(0.975);
+            opacity: 0.75;
+            background: orange; ${'' /* ${props => this.props.img}; */}
+            color: rgb(255, 255, 255);
+            border-radius: 15px;
+            border-color: #dd7e6b;
+            border-width: 2px;
+            
+        }
     }
 
-
-    ol {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: grey; 
-    }
 `;
 
 class InfoTextBox extends Component {
 
     render() {
         return (
-            <Wrapper>
-                <div>
-                    <h1>{this.props.name}</h1>
-                </div>
-                <div>
+            <Wrapper >
+                <a
+                    href={this.props.link}
+                    className="box"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     <div>
-                    <img src="Img/infos.png" alt="about"/>
+                        <h7>{this.props.itIs}:</h7>
+                        <h3>{this.props.name}</h3>
                     </div>
-                    <ol>
-                        <li>teste</li>
-                        <li>teste</li>
-                        <li>teste</li>
-                    </ol>
-                </div>
-            </Wrapper>
+                </a>
+             </Wrapper>
         )
     }
 };
